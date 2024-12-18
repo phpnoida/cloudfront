@@ -1,6 +1,7 @@
 import { Container, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Product = () => {
   const [res, setRes] = useState("");
@@ -8,7 +9,7 @@ const Product = () => {
     (async function () {
       try {
         const response = await axios.get(
-          "https://d2mtengiu2iwzp.cloudfront.net/api/2m"
+          "https://dy2vwfau6udnh.cloudfront.net/api/2m"
         ); // Await response from the URL
         const result = response.data; // Store the result
         console.log("Data fetched successfully:", result);
@@ -24,6 +25,7 @@ const Product = () => {
     <Container maxWidth="md">
       <Typography>Product page</Typography>
       <Typography variant="h3">{JSON.stringify(res)}</Typography>
+      <Link to="/images">Private Image</Link>
     </Container>
   );
 };
